@@ -28,7 +28,7 @@ Inversion of Control (IoC)
 package main
 
 import (
-    "github.com/berkaroad/ioc"
+    "gopkg.berkaroad.top/ioc"
 )
 
 type Interface1 interface {
@@ -140,17 +140,17 @@ func main() {
 ```sh
 go test -run=none -count=1 -benchtime=1000000x -benchmem -bench=. ./...
 
-goos: linux
+goos: darwin
 goarch: amd64
-pkg: github.com/berkaroad/ioc
-cpu: AMD Ryzen 7 5800H with Radeon Graphics         
-BenchmarkGetSingletonService-4           1000000                26.16 ns/op            0 B/op          0 allocs/op
-BenchmarkGetTransientService-4           1000000               370.9 ns/op            48 B/op          1 allocs/op
-BenchmarkGetTransientServiceNative-4     1000000               131.9 ns/op            48 B/op          1 allocs/op
-BenchmarkInjectToFunc-4                  1000000               659.5 ns/op           144 B/op          5 allocs/op
-BenchmarkInjectToFuncNative-4            1000000                89.26 ns/op            0 B/op          0 allocs/op
-BenchmarkInjectToStruct-4                1000000               311.7 ns/op             0 B/op          0 allocs/op
-BenchmarkInjectToStructNative-4          1000000                87.64 ns/op            0 B/op          0 allocs/op
+pkg: gopkg.berkaroad.top/ioc
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkGetSingletonService-16                  1000000                34.26 ns/op            0 B/op          0 allocs/op
+BenchmarkGetTransientService-16                  1000000               527.7 ns/op            48 B/op          1 allocs/op
+BenchmarkGetTransientServiceNative-16            1000000               120.3 ns/op             0 B/op          0 allocs/op
+BenchmarkInjectToFunc-16                         1000000               997.2 ns/op           144 B/op          5 allocs/op
+BenchmarkInjectToFuncNative-16                   1000000               111.2 ns/op             0 B/op          0 allocs/op
+BenchmarkInjectToStruct-16                       1000000               405.0 ns/op             0 B/op          0 allocs/op
+BenchmarkInjectToStructNative-16                 1000000               109.3 ns/op             0 B/op          0 allocs/op
 PASS
-ok      github.com/berkaroad/ioc        1.686s
+ok      gopkg.berkaroad.top/ioc 2.738s
 ```

@@ -243,8 +243,6 @@ func GetServiceFromC[TService any](container Container) TService {
 // Inject to func or *struct with service.
 // Field with type 'ioc.Resolver', will always been injected.
 //
-// It will panic if param type in func not registered in container.
-//
 //	// service
 //	type Service1 interface {
 //	    Method1()
@@ -277,8 +275,6 @@ func Inject(target any) {
 
 // InjectFromC to inject to func or *struct or their's reflect.Value with service from container.
 // Field with type 'ioc.Resolver', will always been injected.
-//
-// It will panic if param type in func not registered in container.
 func InjectFromC(container Container, target any) {
 	var targetVal reflect.Value
 	if val, ok := target.(reflect.Value); ok {
